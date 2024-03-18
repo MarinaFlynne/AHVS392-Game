@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c786wh6n5xgth"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_0va3e"]
+[ext_resource type="Texture2D" uid="uid://c53rg1r1jrh5t" path="res://Sprites/strawberryplant.png" id="2_sn73o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_akmg7"]
+size = Vector2(96, 112)
+
+[node name="StrawberryPlant" instance=ExtResource("1_0va3e")]
+dialogue_name = "strawberry_plant"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_akmg7")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_sn73o")

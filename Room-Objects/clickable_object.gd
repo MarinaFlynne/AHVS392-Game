@@ -34,5 +34,5 @@ func _on_input_event(_viewport, event, _shape_idx):
 		
 
 func _on_clicked():
-	GameManager.show_dialogue("test")
+	GameManager.show_dialogue(dialogue_name)
 	pass

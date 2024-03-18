@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmxr6nsq1k7li"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_k0f2o"]
+
+[node name="Minafish" instance=ExtResource("1_k0f2o")]
+dialogue_name = "minafish"
