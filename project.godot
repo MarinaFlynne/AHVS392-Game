@@ -14,9 +14,32 @@ config/name="AHVS392"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
 [dotnet]
 
 project/assembly_name="AHVS392"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Components/": "orange",
+"res://Dialogue/": "yellow",
+"res://Fonts/": "green",
+"res://Levels/": "teal",
+"res://Managers/": "blue",
+"res://Music/": "purple",
+"res://Room-Objects/": "pink",
+"res://SFX/": "red",
+"res://Sprites/": "orange",
+"res://addons/": "red"
+}
 
 [input]
 
@@ -29,6 +52,10 @@ mouse_up={
 "deadzone": 0.5,
 "events": []
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogue/main.dialogue")
 
 [rendering]
 
