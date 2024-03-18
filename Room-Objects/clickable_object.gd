@@ -34,5 +34,5 @@ func _on_input_event(_viewport, event, _shape_idx):
 		
 
 func _on_clicked():
-	# DialogueManager.show(dialogue_name)
+	# DialogueManager.show()
 	pass

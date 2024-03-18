@@ -14,6 +14,10 @@ config/name="AHVS392"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
 [dotnet]
 
 project/assembly_name="AHVS392"
