@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg3a7bimyvpac"]
+
+[ext_resource type="Script" path="res://Room-Objects/clickable_object.gd" id="1_7x8kl"]
+[ext_resource type="Texture2D" uid="uid://b6o5456re3bte" path="res://icon.svg" id="2_mcbj2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o10kh"]
+size = Vector2(128, 128)
+
+[node name="ClickableObject" type="Area2D"]
+script = ExtResource("1_7x8kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_mcbj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o10kh")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
