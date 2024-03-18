@@ -11,3 +11,9 @@ Nathan: Here are some choices.
 Nathan: For more information see the online documentation.
 
 => END
+
+~ test
+Mina: Hello! This is a test of the dialogue system.
+Mina: Mrow mrow mrow mreaowwww :p
+
+=> END

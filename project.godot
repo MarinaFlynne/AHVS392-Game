@@ -11,12 +11,15 @@ config_version=5
 [application]
 
 config/name="AHVS392"
+run/main_scene="res://Levels/bedroom.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameManager="*res://Managers/game_manager.tscn"
+SceneManager="*res://Managers/scene_manager.tscn"
 
 [dotnet]
 
