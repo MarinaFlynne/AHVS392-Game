@@ -9,7 +9,7 @@ size = Vector2(196.5, 72)
 [node name="Shirt" instance=ExtResource("1_k0agf")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(61.75, 268)
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_2hpqo")
 
 [node name="Sprite" parent="." index="1"]

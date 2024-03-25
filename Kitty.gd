@@ -1,16 +1,14 @@
-extends RigidBody2D
+extends Area2D
 
 ## The name of the dialogue to play when this object is clicked.
 @export var dialogue_name: String = "no_dialogue_set"
 ## The alpha value to set the sprite to when it is clicked (0 - 1).
 @export_range(0, 1) var click_alpha := 0.7
 
-var is_hover_enabled := true
-@export var alt_sprite_exists := false
-@export_file() var default_sprite
-@export_file() var alt_sprite
+@export var kitty_overlay: Sprite2D
 
-@export var scale_multiplier: int = 3
+var is_hover_enabled := true
+
 
 var is_hovering: bool
 
@@ -45,26 +43,17 @@ func _on_input_event(_viewport, event, _shape_idx):
 func _on_clicked():
 	if GameManager.new_dialogue_allowed:
 		input_pickable = false
-		#_on_mouse_exited()
+		_on_mouse_exited()
 		is_hover_enabled = false
 		is_hovering = false
-		GameManager.overlay.show()
-		global_position = GameManager.middle.global_position
-		scale *= scale_multiplier
-		z_index = 1
+		$Sprite.hide()
+		kitty_overlay.show()
+		get_tree().create_timer(2).timeout
 		GameManager.show_dialogue(dialogue_name)
-		if alt_sprite_exists:
-			$Sprite.texture = load(alt_sprite)
-		$Sprite/AnimationPlayer.play_backwards("hover")
-		$Sprite.self_modulate = Color(1, 1, 1, 1)
 		await GameManager.dialogue_ended
-		GameManager.overlay.hide()
-		scale = scale / scale_multiplier
-		z_index = 0
-		if alt_sprite_exists:
-			$Sprite.texture = load(default_sprite)
-		$Sprite.self_modulate = Color(1, 1, 1, 1)
-		#await get_tree().create_timer(0.5).timeout
-		GameManager.start_box_minigame(self)
-		#freeze = false
-		
+		get_tree().create_timer(0.5).timeout
+		$Sprite.show()
+		kitty_overlay.hide()
+		input_pickable = true
+		is_hover_enabled = true
+	

@@ -43,7 +43,9 @@ _data = {
 "hover": SubResource("Animation_kw54o")
 }
 
-[node name="ClickableObject" type="Area2D"]
+[node name="ClickableObject" type="RigidBody2D"]
+input_pickable = true
+freeze = true
 script = ExtResource("1_7x8kl")
 metadata/_edit_group_ = true
 

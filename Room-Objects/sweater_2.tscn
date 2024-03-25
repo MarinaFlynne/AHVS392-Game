@@ -9,7 +9,7 @@ size = Vector2(256, 152)
 [node name="Sweater2" instance=ExtResource("1_bwp5k")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-320, 212)
+position = Vector2(0, 0)
 shape = SubResource("RectangleShape2D_vh0om")
 
 [node name="Sprite" parent="." index="1"]

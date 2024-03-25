@@ -7,6 +7,9 @@
 size = Vector2(16, 32)
 
 [node name="StrawberrySmall" instance=ExtResource("1_fegaa")]
+alt_sprite_exists = true
+default_sprite = "res://Sprites/strawberryplant-small.png"
+alt_sprite = "res://Sprites/strawberryplant.png"
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)

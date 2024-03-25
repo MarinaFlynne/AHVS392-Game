@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://oy08gc5cefkq"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_qn2a3"]
+[ext_resource type="Texture2D" uid="uid://crlnw0s8q55sh" path="res://Sprites/sock1.png" id="2_onpy2"]
+
+[node name="Sock1" instance=ExtResource("1_qn2a3")]
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_onpy2")
