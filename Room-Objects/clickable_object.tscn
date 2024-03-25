@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bn2fmxbvcksm8" path="res://Sprites/minaFish.png" id="2_l4k2r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o10kh"]
-size = Vector2(88, 56)
+size = Vector2(77, 70)
 
 [sub_resource type="Animation" id="Animation_xy4el"]
 length = 0.001

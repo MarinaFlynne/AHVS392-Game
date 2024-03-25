@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cepgo3slpxhsv"]
+
+[ext_resource type="Texture2D" uid="uid://btn4tfbmst53m" path="res://Sprites/bedroom-bg.png" id="1_soyca"]
+[ext_resource type="PackedScene" uid="uid://d24kh2c5bcy5l" path="res://Minigame-Objects/box.tscn" id="2_t8k8j"]
+
+[node name="BoxMinigame" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("1_soyca")
+
+[node name="Box" parent="." instance=ExtResource("2_t8k8j")]

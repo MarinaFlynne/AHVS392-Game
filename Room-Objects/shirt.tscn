@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdi1l7sc6g581"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_k0agf"]
+[ext_resource type="Texture2D" uid="uid://bfx5rw712thml" path="res://Sprites/shirt.png" id="2_ah6ve"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hpqo"]
+size = Vector2(196.5, 72)
+
+[node name="Shirt" instance=ExtResource("1_k0agf")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(61.75, 268)
+shape = SubResource("RectangleShape2D_2hpqo")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_ah6ve")

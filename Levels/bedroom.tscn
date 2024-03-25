@@ -1,12 +1,100 @@
-[gd_scene load_steps=3 format=3 uid="uid://chvjmr0olqyv6"]
+[gd_scene load_steps=23 format=3 uid="uid://chvjmr0olqyv6"]
 
-[ext_resource type="PackedScene" uid="uid://bmxr6nsq1k7li" path="res://Room-Objects/minafish.tscn" id="1_yj70j"]
-[ext_resource type="PackedScene" uid="uid://c786wh6n5xgth" path="res://Room-Objects/strawberry_plant.tscn" id="2_b326y"]
+[ext_resource type="Texture2D" uid="uid://btn4tfbmst53m" path="res://Sprites/bedroom-bg.png" id="1_hk754"]
+[ext_resource type="Texture2D" uid="uid://fjhxwx3og64f" path="res://Sprites/dresser.png" id="2_3qc7t"]
+[ext_resource type="PackedScene" uid="uid://bp4ktkdghxt2" path="res://Room-Objects/blahaj.tscn" id="3_srls8"]
+[ext_resource type="PackedScene" uid="uid://cqaxrb3yrsgo5" path="res://Room-Objects/calculator.tscn" id="4_fbl1q"]
+[ext_resource type="PackedScene" uid="uid://tenjle8vii4y" path="res://Room-Objects/eva_poster.tscn" id="5_s4qki"]
+[ext_resource type="PackedScene" uid="uid://d4k1sfh1nri4p" path="res://Room-Objects/textbook.tscn" id="6_y334j"]
+[ext_resource type="PackedScene" uid="uid://b1t4nbr5wr1kw" path="res://Room-Objects/hrt.tscn" id="7_t3i6m"]
+[ext_resource type="PackedScene" uid="uid://dm2aj2fvy00bp" path="res://Room-Objects/lain_poster.tscn" id="8_rwjgt"]
+[ext_resource type="PackedScene" uid="uid://bi2466i3id1ts" path="res://Room-Objects/lamp.tscn" id="9_cx8e7"]
+[ext_resource type="PackedScene" uid="uid://bnivbkasm6g5" path="res://Room-Objects/laptop.tscn" id="10_pick0"]
+[ext_resource type="PackedScene" uid="uid://c2udd580v5j8g" path="res://Room-Objects/loose_paper.tscn" id="11_fypx1"]
+[ext_resource type="PackedScene" uid="uid://6keb4md0iuub" path="res://Room-Objects/pants.tscn" id="12_prg6r"]
+[ext_resource type="PackedScene" uid="uid://fwpyr45j3yhb" path="res://Room-Objects/plant_1.tscn" id="13_qnt7c"]
+[ext_resource type="PackedScene" uid="uid://ce6la4v3s8r60" path="res://Room-Objects/plant_2.tscn" id="14_hqdxw"]
+[ext_resource type="PackedScene" uid="uid://h0yrlbngskeh" path="res://Room-Objects/plant_3.tscn" id="15_23t2g"]
+[ext_resource type="PackedScene" uid="uid://cdi1l7sc6g581" path="res://Room-Objects/shirt.tscn" id="16_tvkvc"]
+[ext_resource type="PackedScene" uid="uid://b4qtbcwvw58g0" path="res://Room-Objects/sock.tscn" id="17_luljq"]
+[ext_resource type="PackedScene" uid="uid://cmsg21ejlt0o5" path="res://Room-Objects/strawberry_small.tscn" id="18_1srcu"]
+[ext_resource type="PackedScene" uid="uid://cuo4244i3wp4q" path="res://Room-Objects/sweater_1.tscn" id="19_pws2b"]
+[ext_resource type="PackedScene" uid="uid://b5c52wk8jqoha" path="res://Room-Objects/sweater_2.tscn" id="20_hea8f"]
+[ext_resource type="PackedScene" uid="uid://udkup7y5tpgu" path="res://Room-Objects/trans_flag.tscn" id="21_t4br8"]
+[ext_resource type="AudioStream" uid="uid://bgok2rxxbyhfa" path="res://Music/almond_milk.wav" id="22_2pfhx"]
 
 [node name="Bedroom" type="Node2D"]
 
-[node name="Minafish" parent="." instance=ExtResource("1_yj70j")]
-position = Vector2(502, 264)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("1_hk754")
 
-[node name="StrawberryPlant" parent="." instance=ExtResource("2_b326y")]
-position = Vector2(760, 257)
+[node name="Dresser" type="Sprite2D" parent="."]
+position = Vector2(515, 334)
+scale = Vector2(3, 3)
+texture = ExtResource("2_3qc7t")
+
+[node name="ClickableObjectContainer" type="Node" parent="."]
+
+[node name="Blahaj" parent="ClickableObjectContainer" instance=ExtResource("3_srls8")]
+position = Vector2(183, 470)
+
+[node name="Calculator" parent="ClickableObjectContainer" instance=ExtResource("4_fbl1q")]
+position = Vector2(910, 292)
+
+[node name="EvaPoster" parent="ClickableObjectContainer" instance=ExtResource("5_s4qki")]
+position = Vector2(811, 140)
+
+[node name="Textbook" parent="ClickableObjectContainer" instance=ExtResource("6_y334j")]
+position = Vector2(943, 287)
+
+[node name="Hrt" parent="ClickableObjectContainer" instance=ExtResource("7_t3i6m")]
+position = Vector2(1106, 284)
+
+[node name="LainPoster" parent="ClickableObjectContainer" instance=ExtResource("8_rwjgt")]
+position = Vector2(997, 162)
+
+[node name="Lamp" parent="ClickableObjectContainer" instance=ExtResource("9_cx8e7")]
+position = Vector2(976, 311)
+
+[node name="Laptop" parent="ClickableObjectContainer" instance=ExtResource("10_pick0")]
+position = Vector2(855, 276)
+
+[node name="LoosePaper" parent="ClickableObjectContainer" instance=ExtResource("11_fypx1")]
+position = Vector2(1043, 285)
+
+[node name="Pants" parent="ClickableObjectContainer" instance=ExtResource("12_prg6r")]
+position = Vector2(434, 391)
+
+[node name="Plant1" parent="ClickableObjectContainer" instance=ExtResource("13_qnt7c")]
+position = Vector2(162, 216)
+
+[node name="Plant2" parent="ClickableObjectContainer" instance=ExtResource("14_hqdxw")]
+position = Vector2(212, 186)
+
+[node name="Plant3" parent="ClickableObjectContainer" instance=ExtResource("15_23t2g")]
+position = Vector2(287, 202)
+
+[node name="Shirt" parent="ClickableObjectContainer" instance=ExtResource("16_tvkvc")]
+position = Vector2(156, 337)
+
+[node name="Sock" parent="ClickableObjectContainer" instance=ExtResource("17_luljq")]
+position = Vector2(195, 328)
+
+[node name="StrawberrySmall" parent="ClickableObjectContainer" instance=ExtResource("18_1srcu")]
+position = Vector2(895, 276)
+
+[node name="Sweater1" parent="ClickableObjectContainer" instance=ExtResource("19_pws2b")]
+position = Vector2(428, 372)
+
+[node name="Sweater2" parent="ClickableObjectContainer" instance=ExtResource("20_hea8f")]
+position = Vector2(828, 289)
+
+[node name="TransFlag" parent="ClickableObjectContainer" instance=ExtResource("21_t4br8")]
+position = Vector2(520, 115)
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_2pfhx")
+volume_db = -8.432
+autoplay = true

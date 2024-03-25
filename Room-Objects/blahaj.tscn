@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp4ktkdghxt2"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_77x6j"]
+[ext_resource type="Texture2D" uid="uid://gj8gqjdd4y16" path="res://Sprites/blahaj.png" id="2_t6eei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ov1fj"]
+size = Vector2(304, 120)
+
+[node name="Blahaj" instance=ExtResource("1_77x6j")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_ov1fj")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_t6eei")

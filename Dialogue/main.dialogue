@@ -1,3 +1,7 @@
+~ no_dialogue_set
+No dialogue set for this item.
+=> END
+
 ~ this_is_a_node_title
 
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
@@ -30,3 +34,8 @@ Mina: meow!
 Mina: erm
 Mina: I don't know why I just said that. It's an impulsive habit of mine I guess 
 Mina: ;-;
+
+=> END
+
+
+

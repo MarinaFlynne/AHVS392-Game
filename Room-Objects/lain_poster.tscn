@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm2aj2fvy00bp"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_e8fki"]
+[ext_resource type="Texture2D" uid="uid://blus8x1aoifkr" path="res://Sprites/lainsprite.png" id="2_x826i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2heac"]
+size = Vector2(112, 176)
+
+[node name="LainPoster" instance=ExtResource("1_e8fki")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_2heac")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_x826i")

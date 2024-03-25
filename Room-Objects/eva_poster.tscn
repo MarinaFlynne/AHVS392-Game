@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://tenjle8vii4y"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_n70kw"]
+[ext_resource type="Texture2D" uid="uid://n2xnv06vkf0j" path="res://Sprites/evaposterr.png" id="2_a6i32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5u7j"]
+size = Vector2(144, 224)
+
+[node name="EvaPoster" instance=ExtResource("1_n70kw")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_s5u7j")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_a6i32")

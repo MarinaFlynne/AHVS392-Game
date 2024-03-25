@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqaxrb3yrsgo5"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_h1r2f"]
+[ext_resource type="Texture2D" uid="uid://d05g0gvv7pjl1" path="res://Sprites/calculator.png" id="2_gj3l6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nodcd"]
+size = Vector2(16, 16)
+
+[node name="Calculator" instance=ExtResource("1_h1r2f")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 0)
+shape = SubResource("RectangleShape2D_nodcd")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_gj3l6")

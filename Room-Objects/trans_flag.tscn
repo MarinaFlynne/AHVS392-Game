@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://udkup7y5tpgu"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_r8man"]
+[ext_resource type="Texture2D" uid="uid://6msc7awq8v61" path="res://Sprites/trans-flag.png" id="2_4lmyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g647k"]
+size = Vector2(128, 70)
+
+[node name="TransFlag" instance=ExtResource("1_r8man")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_g647k")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_4lmyx")

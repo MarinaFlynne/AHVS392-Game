@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://h0yrlbngskeh"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_nbsxm"]
+[ext_resource type="Texture2D" uid="uid://dpajfvx6tkufe" path="res://Sprites/plant3.png" id="2_h5gm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ko8ue"]
+size = Vector2(56, 70)
+
+[node name="Plant3" instance=ExtResource("1_nbsxm")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-4, 5)
+shape = SubResource("RectangleShape2D_ko8ue")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_h5gm2")

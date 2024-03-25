@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4qtbcwvw58g0"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_oihbq"]
+[ext_resource type="Texture2D" uid="uid://dn30vqmb4fdgp" path="res://Sprites/socc.png" id="2_ksihp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tun4u"]
+size = Vector2(168, 64)
+
+[node name="Sock" instance=ExtResource("1_oihbq")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(340, 280)
+shape = SubResource("RectangleShape2D_tun4u")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_ksihp")

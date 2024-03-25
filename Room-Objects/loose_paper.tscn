@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2udd580v5j8g"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_l3m38"]
+[ext_resource type="Texture2D" uid="uid://cgeos4ws4gqua" path="res://Sprites/loose-paper.png" id="2_ls5sr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mlnt"]
+size = Vector2(54, 24)
+
+[node name="LoosePaper" instance=ExtResource("1_l3m38")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(2, 4)
+shape = SubResource("RectangleShape2D_6mlnt")
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource("2_ls5sr")
