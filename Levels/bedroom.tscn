@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://chvjmr0olqyv6"]
+[gd_scene load_steps=31 format=3 uid="uid://chvjmr0olqyv6"]
 
 [ext_resource type="Texture2D" uid="uid://btn4tfbmst53m" path="res://Sprites/bedroom-bg.png" id="1_hk754"]
 [ext_resource type="Script" path="res://Levels/bedroom.gd" id="1_oosxo"]
 [ext_resource type="Texture2D" uid="uid://fjhxwx3og64f" path="res://Sprites/dresser.png" id="2_3qc7t"]
 [ext_resource type="PackedScene" uid="uid://bp4ktkdghxt2" path="res://Room-Objects/blahaj.tscn" id="3_srls8"]
+[ext_resource type="Texture2D" uid="uid://br0k1qyaf78c4" path="res://Sprites/boxes.png" id="4_63mi4"]
 [ext_resource type="PackedScene" uid="uid://cqaxrb3yrsgo5" path="res://Room-Objects/calculator.tscn" id="4_fbl1q"]
 [ext_resource type="PackedScene" uid="uid://tenjle8vii4y" path="res://Room-Objects/eva_poster.tscn" id="5_s4qki"]
 [ext_resource type="PackedScene" uid="uid://d4k1sfh1nri4p" path="res://Room-Objects/textbook.tscn" id="6_y334j"]
@@ -44,22 +45,31 @@ scale = Vector2(3, 3)
 texture = ExtResource("23_voy4s")
 
 [node name="Box" parent="BoxGame" instance=ExtResource("24_6iu0e")]
+visible = false
 position = Vector2(394, -238)
 scale = Vector2(2.32599, 1.53556)
 
 [node name="Box3" parent="BoxGame" instance=ExtResource("24_6iu0e")]
+visible = false
 position = Vector2(1544, 50)
 
 [node name="Box4" parent="BoxGame" instance=ExtResource("24_6iu0e")]
+visible = false
 position = Vector2(2007, 270)
 scale = Vector2(0.50272, 0.50272)
 
 [node name="Box2" parent="BoxGame" instance=ExtResource("24_6iu0e")]
+visible = false
 position = Vector2(734, -295)
 scale = Vector2(1.07012, 1.6311)
 
 [node name="ObjectSpawnPos" type="Marker2D" parent="BoxGame"]
 position = Vector2(1794, 128)
+
+[node name="Boxes" type="Sprite2D" parent="BoxGame"]
+position = Vector2(1800, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("4_63mi4")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -75,12 +85,14 @@ texture = ExtResource("2_3qc7t")
 
 [node name="Blahaj" parent="ClickableObjectContainer" instance=ExtResource("3_srls8")]
 position = Vector2(183, 470)
+dialogue_name = "blahaj"
 
 [node name="Calculator" parent="ClickableObjectContainer" instance=ExtResource("4_fbl1q")]
 position = Vector2(910, 292)
 
 [node name="EvaPoster" parent="ClickableObjectContainer" instance=ExtResource("5_s4qki")]
 position = Vector2(811, 140)
+dialogue_name = "eva_poster"
 scale_multiplier = 2
 
 [node name="Textbook" parent="ClickableObjectContainer" instance=ExtResource("6_y334j")]
@@ -88,9 +100,11 @@ position = Vector2(943, 287)
 
 [node name="Hrt" parent="ClickableObjectContainer" instance=ExtResource("7_t3i6m")]
 position = Vector2(608, 251)
+dialogue_name = "hrt"
 
 [node name="LainPoster" parent="ClickableObjectContainer" instance=ExtResource("8_rwjgt")]
 position = Vector2(997, 162)
+dialogue_name = "lain_poster"
 scale_multiplier = 2
 
 [node name="Lamp" parent="ClickableObjectContainer" instance=ExtResource("9_cx8e7")]
@@ -104,18 +118,23 @@ position = Vector2(1043, 285)
 
 [node name="Pants" parent="ClickableObjectContainer" instance=ExtResource("12_prg6r")]
 position = Vector2(970, 596)
+dialogue_name = "pants"
 
 [node name="Plant1" parent="ClickableObjectContainer" instance=ExtResource("13_qnt7c")]
 position = Vector2(162, 216)
+dialogue_name = "plant_1"
 
 [node name="Plant2" parent="ClickableObjectContainer" instance=ExtResource("14_hqdxw")]
 position = Vector2(212, 186)
+dialogue_name = "plant_2"
 
 [node name="Plant3" parent="ClickableObjectContainer" instance=ExtResource("15_23t2g")]
 position = Vector2(287, 202)
+dialogue_name = "plant_3"
 
 [node name="Shirt" parent="ClickableObjectContainer" instance=ExtResource("16_tvkvc")]
 position = Vector2(455, 597)
+dialogue_name = "shirt"
 
 [node name="StrawberrySmall" parent="ClickableObjectContainer" instance=ExtResource("18_1srcu")]
 position = Vector2(895, 276)
@@ -123,18 +142,23 @@ dialogue_name = "strawberry_plant"
 
 [node name="Sweater1" parent="ClickableObjectContainer" instance=ExtResource("19_pws2b")]
 position = Vector2(786, 588)
+dialogue_name = "sweater_1"
 
 [node name="Sweater2" parent="ClickableObjectContainer" instance=ExtResource("20_hea8f")]
 position = Vector2(501, 497)
+dialogue_name = "sweater_2"
 
 [node name="TransFlag" parent="ClickableObjectContainer" instance=ExtResource("21_t4br8")]
 position = Vector2(520, 115)
+dialogue_name = "trans_flag"
 
 [node name="Sock1" parent="ClickableObjectContainer" instance=ExtResource("24_2xrn7")]
 position = Vector2(280, 586)
+dialogue_name = "sock_1"
 
 [node name="Sock2" parent="ClickableObjectContainer" instance=ExtResource("25_wgj20")]
 position = Vector2(655, 617)
+dialogue_name = "sock_2"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_2pfhx")
