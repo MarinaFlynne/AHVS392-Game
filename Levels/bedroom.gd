@@ -11,7 +11,10 @@ func _ready():
 	GameManager.box_game_position = box_game_marker.position
 	GameManager.overlay = %Overlay
 	GameManager.middle = %MiddleMarker
-
+	GameManager.show_dialogue("start_game")
+	await GameManager.dialogue_ended
+	#await get_tree().create_timer(2).timeout
+	%BackgroundMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

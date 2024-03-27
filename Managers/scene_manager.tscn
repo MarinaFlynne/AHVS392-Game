@@ -42,7 +42,8 @@ _data = {
 [node name="SceneManager" type="Node"]
 script = ExtResource("1_wkqke")
 Scenes = {
-"bedroom": &"res://Levels/bedroom.tscn"
+"bedroom": &"res://Levels/bedroom.tscn",
+"title": &"res://Levels/title.tscn"
 }
 fadePath = NodePath("CanvasLayer/ColorRect/Fade")
 

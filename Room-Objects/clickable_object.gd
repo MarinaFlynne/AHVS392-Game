@@ -14,6 +14,8 @@ var is_hover_enabled := true
 
 var is_hovering: bool
 
+@export var is_lamp = false
+
 signal clicked
 
 func _process(delta):
@@ -53,6 +55,8 @@ func _on_clicked():
 		scale *= scale_multiplier
 		z_index = 1
 		GameManager.show_dialogue(dialogue_name)
+		if is_lamp:
+			%Cable.hide()
 		if alt_sprite_exists:
 			$Sprite.texture = load(alt_sprite)
 		$Sprite/AnimationPlayer.play_backwards("hover")
@@ -61,6 +65,7 @@ func _on_clicked():
 		GameManager.overlay.hide()
 		scale = scale / scale_multiplier
 		z_index = 0
+		
 		if alt_sprite_exists:
 			$Sprite.texture = load(default_sprite)
 		$Sprite.self_modulate = Color(1, 1, 1, 1)

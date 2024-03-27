@@ -1,16 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi2466i3id1ts"]
+[gd_scene load_steps=7 format=3 uid="uid://bi2466i3id1ts"]
 
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_l3fo6"]
-[ext_resource type="Texture2D" uid="uid://dr1dpfxatmqat" path="res://Sprites/lamp.png" id="2_p1v61"]
+[ext_resource type="Texture2D" uid="uid://sx8gno1hfv1v" path="res://Sprites/lamp_wire.png" id="2_qyuey"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v1yx2"]
-size = Vector2(56, 48)
+size = Vector2(21, 40)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bave0"]
+load_path = "res://.godot/imported/lamp1.png-8ea339661a0c9963cbb42f1e37d6d0e2.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1r3t"]
+size = Vector2(20, 7)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_16mr1"]
+radius = 6.51889
 
 [node name="Lamp" instance=ExtResource("1_l3fo6")]
+position = Vector2(0, 8)
+is_lamp = true
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(12, -32)
+position = Vector2(17.5, 4)
 shape = SubResource("RectangleShape2D_v1yx2")
 
 [node name="Sprite" parent="." index="1"]
-texture = ExtResource("2_p1v61")
+texture = SubResource("CompressedTexture2D_bave0")
+
+[node name="Cable" type="Sprite2D" parent="." index="2"]
+unique_name_in_owner = true
+position = Vector2(10, 46)
+scale = Vector2(3, 3)
+texture = ExtResource("2_qyuey")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="3"]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_g1r3t")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="4"]
+position = Vector2(-16, -12)
+rotation = -0.869008
+shape = SubResource("CapsuleShape2D_16mr1")

@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://bl57qdv8jx40r"]
+
+[ext_resource type="Script" path="res://Levels/title.gd" id="1_3drqj"]
+[ext_resource type="Texture2D" uid="uid://fmhei2s1vge5" path="res://Sprites/title-bg.png" id="1_tfbam"]
+[ext_resource type="FontFile" uid="uid://c72r586hyy6uw" path="res://Fonts/CelticTime.ttf" id="2_n8mrq"]
+[ext_resource type="AudioStream" uid="uid://dg028fgj8edoo" path="res://Music/blossom_little_lily.wav" id="3_sfcbb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxogx"]
+bg_color = Color(0.180392, 0.658824, 0.807843, 0.415686)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bq8mx"]
+bg_color = Color(0.180392, 0.658824, 0.807843, 0.815686)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4lbf"]
+bg_color = Color(0.180392, 0.658824, 0.807843, 0.501961)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_3drqj")
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("1_tfbam")
+
+[node name="TitleText" type="Label" parent="."]
+offset_left = 680.0
+offset_top = 104.0
+offset_right = 1333.0
+offset_bottom = 331.0
+theme_override_colors/font_shadow_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_n8mrq")
+theme_override_font_sizes/font_size = 130
+text = "TITLE 
+OF GAME"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 798.0
+offset_top = 440.0
+offset_right = 902.0
+offset_bottom = 509.0
+theme_override_fonts/font = ExtResource("2_n8mrq")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxogx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bq8mx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b4lbf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_mxogx")
+text = "Play"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sfcbb")
+volume_db = -4.685
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

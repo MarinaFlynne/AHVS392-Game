@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://chvjmr0olqyv6"]
+[gd_scene load_steps=39 format=3 uid="uid://chvjmr0olqyv6"]
 
 [ext_resource type="Texture2D" uid="uid://btn4tfbmst53m" path="res://Sprites/bedroom-bg.png" id="1_hk754"]
 [ext_resource type="Script" path="res://Levels/bedroom.gd" id="1_oosxo"]
@@ -25,11 +25,37 @@
 [ext_resource type="AudioStream" uid="uid://bgok2rxxbyhfa" path="res://Music/almond_milk.wav" id="22_2pfhx"]
 [ext_resource type="Texture2D" uid="uid://bci57fqbn02go" path="res://Sprites/wall.png" id="23_voy4s"]
 [ext_resource type="PackedScene" uid="uid://oy08gc5cefkq" path="res://Room-Objects/sock_1.tscn" id="24_2xrn7"]
-[ext_resource type="PackedScene" uid="uid://d24kh2c5bcy5l" path="res://Minigame-Objects/box.tscn" id="24_6iu0e"]
 [ext_resource type="PackedScene" uid="uid://demdlt3jvqrip" path="res://Room-Objects/sock_2.tscn" id="25_wgj20"]
 [ext_resource type="PackedScene" uid="uid://cwrm0mqql8hvh" path="res://Room-Objects/kitty.tscn" id="27_4evst"]
 [ext_resource type="Texture2D" uid="uid://dplsi10aypjm7" path="res://Sprites/catzoomin.png" id="28_4k4oe"]
 [ext_resource type="Texture2D" uid="uid://dmw7qopb7r37r" path="res://Sprites/overlay.png" id="29_0dmfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0uo0"]
+size = Vector2(4, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wkq4"]
+size = Vector2(4, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ch88h"]
+size = Vector2(2, 62.4167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwu3g"]
+size = Vector2(2, 62.4167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x26hf"]
+size = Vector2(4, 102.542)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dggr"]
+size = Vector2(5, 102.542)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnb61"]
+size = Vector2(4, 97)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8t5r6"]
+size = Vector2(2, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sbko"]
+size = Vector2(2.66658, 160)
 
 [node name="Bedroom" type="Node2D" node_paths=PackedStringArray("bedroom_camera", "box_game_camera", "box_game_marker")]
 script = ExtResource("1_oosxo")
@@ -44,32 +70,54 @@ position = Vector2(1800, 324)
 scale = Vector2(3, 3)
 texture = ExtResource("23_voy4s")
 
-[node name="Box" parent="BoxGame" instance=ExtResource("24_6iu0e")]
-visible = false
-position = Vector2(394, -238)
-scale = Vector2(2.32599, 1.53556)
-
-[node name="Box3" parent="BoxGame" instance=ExtResource("24_6iu0e")]
-visible = false
-position = Vector2(1544, 50)
-
-[node name="Box4" parent="BoxGame" instance=ExtResource("24_6iu0e")]
-visible = false
-position = Vector2(2007, 270)
-scale = Vector2(0.50272, 0.50272)
-
-[node name="Box2" parent="BoxGame" instance=ExtResource("24_6iu0e")]
-visible = false
-position = Vector2(734, -295)
-scale = Vector2(1.07012, 1.6311)
-
 [node name="ObjectSpawnPos" type="Marker2D" parent="BoxGame"]
 position = Vector2(1794, 128)
 
 [node name="Boxes" type="Sprite2D" parent="BoxGame"]
-position = Vector2(1800, 324)
+position = Vector2(1800, 331)
 scale = Vector2(3, 3)
 texture = ExtResource("4_63mi4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BoxGame/Boxes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(-182, 55.5)
+shape = SubResource("RectangleShape2D_v0uo0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(-83.0001, 55.3333)
+shape = SubResource("RectangleShape2D_8wkq4")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(-72.0001, 74.0833)
+shape = SubResource("RectangleShape2D_ch88h")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(13.9999, 74.2083)
+shape = SubResource("RectangleShape2D_gwu3g")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(24.9999, 54.2708)
+shape = SubResource("RectangleShape2D_x26hf")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(180.5, 54.3333)
+shape = SubResource("RectangleShape2D_6dggr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(-133, 102)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_mnb61")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(-29.0001, 104)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_8t5r6")
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="BoxGame/Boxes/StaticBody2D"]
+position = Vector2(103, 104.333)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_4sbko")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(576, 324)
@@ -106,9 +154,6 @@ dialogue_name = "hrt"
 position = Vector2(997, 162)
 dialogue_name = "lain_poster"
 scale_multiplier = 2
-
-[node name="Lamp" parent="ClickableObjectContainer" instance=ExtResource("9_cx8e7")]
-position = Vector2(976, 311)
 
 [node name="Laptop" parent="ClickableObjectContainer" instance=ExtResource("10_pick0")]
 position = Vector2(855, 276)
@@ -160,10 +205,13 @@ dialogue_name = "sock_1"
 position = Vector2(655, 617)
 dialogue_name = "sock_2"
 
+[node name="Lamp" parent="ClickableObjectContainer" instance=ExtResource("9_cx8e7")]
+position = Vector2(981, 280)
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
 stream = ExtResource("22_2pfhx")
 volume_db = -8.432
-autoplay = true
 
 [node name="BedroomCamera" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -174,6 +222,7 @@ enabled = false
 
 [node name="Kitty" parent="." node_paths=PackedStringArray("kitty_overlay") instance=ExtResource("27_4evst")]
 position = Vector2(722, 412)
+dialogue_name = "kitty"
 kitty_overlay = NodePath("../KittyOverlay")
 
 [node name="KittyOverlay" type="Sprite2D" parent="."]

@@ -2,6 +2,16 @@
 No dialogue set for this item.
 => END
 
+~ start_game
+do wait(3)
+sighh..
+I guess tomorrow's the day. I'm actually moving out of this place.
+I really liked this cozy little room. It's a bit sad to leave it.
+ahh stay positive Hazel!! Even though my new place won't be as nice, it will be pretty cool to live a bit closer to my partner.
+do wait(2)
+I guess I have pack up all my things now. I've kinda been procrastinating doing that over the past few days.. eheh
+=> END!
+
 ~ this_is_a_node_title
 
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
@@ -46,6 +56,9 @@ I hope she likes her next home!
 
 ~ kitty
 So gloopy...
+My cat Mango! She's such a cutie, even if she does make a mess sometimes heheh.
+I should put her back down. She seems pretty sleepy 
+she's always sleepin (I wish I could do that)
 => END!
 
 ~ sweater_2
@@ -122,4 +135,6 @@ AHAHAHAHAH
 (best anime ever)
 (i need to get a haibane renmei poster)
 => END!
+
+
 
