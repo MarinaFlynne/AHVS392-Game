@@ -43,14 +43,17 @@ _data = {
 script = ExtResource("1_wkqke")
 Scenes = {
 "bedroom": &"res://Levels/bedroom.tscn",
+"ending": &"res://Levels/ending.tscn",
 "title": &"res://Levels/title.tscn"
 }
 fadePath = NodePath("CanvasLayer/ColorRect/Fade")
+overlayPath = NodePath("CanvasLayer/ColorRect")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 4
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 15
 anchor_right = 1.0

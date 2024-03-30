@@ -8,6 +8,9 @@ var box_game_position: Vector2 = Vector2(1800, 324)
 var box_game_camera: Camera2D
 var bedroom_camera: Camera2D
 
+var objects_picked_up: int = 0
+var total_objects: int = 24
+
 var overlay: Sprite2D
 var middle: Node2D
 
@@ -76,5 +79,13 @@ func minigame_ended():
 	minigame_enabled = false
 	drop_enabled = false
 	current_minigame_object = null
+	GameManager.objects_picked_up += 1
+	if (GameManager.objects_picked_up >= GameManager.total_objects):
+		GameManager.show_dialogue("end_dialogue")
+		await GameManager.dialogue_ended
+		await get_tree().create_timer(2).timeout
+		GameManager.new_dialogue_allowed = true
+		SceneManager.SwitchScene("ending", true)
+		
 	
 

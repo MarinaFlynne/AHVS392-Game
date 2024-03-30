@@ -10,6 +10,7 @@ class_name NSceneManager
 # Key: scene alias as a String, value: path to scene (MUST be of StringName type)
 @export var Scenes : Dictionary = {}
 @export var fadePath: NodePath
+@export var overlayPath: NodePath
 
 # Alias of the currently selected scene
 var m_CurrentSceneAlias: String = ""
@@ -34,14 +35,21 @@ func RemoveScene(sceneAlias : String) -> void:
 # Parameter sceneAlias: The scene alias of the scene to switch to
 func SwitchScene(sceneAlias : String, fade = false) -> void:
 	var fadeNode 
+	var overlayNode = get_node(overlayPath)
 	if fade:
+		overlayNode.show()
 		fadeNode = get_node(fadePath)
-		fadeNode.play("fade")
+		fadeNode.play_backwards("fade")
 		await fadeNode.animation_finished
+		#%CanvasLayer/ColorRect.hide()
 	get_tree().change_scene_to_file(Scenes[sceneAlias])
 	if fade:
+		overlayNode.show()
 		await get_tree().create_timer(0.7).timeout
-		fadeNode.play_backwards("fade")
+		fadeNode.play("fade")
+		await fadeNode.animation_finished
+		overlayNode.hide()
+		
  
 # Description: Restart the current scene
 func RestartScene() -> void:

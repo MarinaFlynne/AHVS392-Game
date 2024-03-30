@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://db3ttpotm88kn"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_8xtfw"]
+[ext_resource type="Texture2D" uid="uid://rx1fgstu5ivp" path="res://Sprites/hot_sauce.png" id="2_um7d6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bktod"]
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3wn0"]
+size = Vector2(6, 8)
+
+[node name="HotSauce" instance=ExtResource("1_8xtfw")]
+dialogue_name = "hot_sauce"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_bktod")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_l3wn0")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_um7d6")

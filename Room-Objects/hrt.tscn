@@ -1,16 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b1t4nbr5wr1kw"]
+[gd_scene load_steps=5 format=3 uid="uid://b1t4nbr5wr1kw"]
 
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_cumvt"]
 [ext_resource type="Texture2D" uid="uid://co340n5fcfw8c" path="res://Sprites/hrt.png" id="2_pwsxc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1m85"]
-size = Vector2(32, 16)
+size = Vector2(6, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep2wc"]
+size = Vector2(12, 7.5)
 
 [node name="Hrt" instance=ExtResource("1_cumvt")]
+dialogue_name = "hrt"
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 0)
+position = Vector2(6, 1.5)
 shape = SubResource("RectangleShape2D_q1m85")
 
-[node name="Sprite" parent="." index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(-6, 4.75)
+shape = SubResource("RectangleShape2D_ep2wc")
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_pwsxc")

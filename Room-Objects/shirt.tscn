@@ -3,14 +3,16 @@
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_k0agf"]
 [ext_resource type="Texture2D" uid="uid://bfx5rw712thml" path="res://Sprites/shirt.png" id="2_ah6ve"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hpqo"]
-size = Vector2(196.5, 72)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xrt6v"]
+radius = 24.0
+height = 160.0
 
 [node name="Shirt" instance=ExtResource("1_k0agf")]
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_2hpqo")
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_xrt6v")
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource("2_ah6ve")

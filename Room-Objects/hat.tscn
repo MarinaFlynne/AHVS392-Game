@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://wad30osceplg"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_oig6u"]
+[ext_resource type="Texture2D" uid="uid://ewkg21x2gis6" path="res://Sprites/hat.png" id="2_3sovm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uebth"]
+radius = 9.0
+height = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e6vi0"]
+radius = 11.0
+
+[node name="Hat" instance=ExtResource("1_oig6u")]
+dialogue_name = "hat"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, 5)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_uebth")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -6)
+rotation = -1.57079
+shape = SubResource("CircleShape2D_e6vi0")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_3sovm")

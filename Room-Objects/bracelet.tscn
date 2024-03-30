@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://djba465yh0br2"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_r0ch2"]
+[ext_resource type="Texture2D" uid="uid://b5uu6ctj4uaem" path="res://Sprites/bracelet.png" id="2_2klph"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m7pen"]
+radius = 5.34727
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dhdij"]
+radius = 3.09807
+
+[node name="Bracelet" instance=ExtResource("1_r0ch2")]
+dialogue_name = "bracelet"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(-12, 2)
+rotation = 1.83259
+shape = SubResource("CapsuleShape2D_m7pen")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(13, 4.76837e-07)
+rotation = 1.0472
+shape = SubResource("CapsuleShape2D_dhdij")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_2klph")

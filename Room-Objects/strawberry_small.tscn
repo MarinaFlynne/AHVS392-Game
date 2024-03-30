@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_fegaa"]
 [ext_resource type="Texture2D" uid="uid://cfhc2lhk8g27c" path="res://Sprites/strawberryplant-small.png" id="2_4nuws"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_351xw"]
-size = Vector2(16, 32)
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ixlr"]
+radius = 9.0
 
 [node name="StrawberrySmall" instance=ExtResource("1_fegaa")]
 alt_sprite_exists = true
@@ -13,7 +13,7 @@ alt_sprite = "res://Sprites/strawberryplant.png"
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, 0)
-shape = SubResource("RectangleShape2D_351xw")
+shape = SubResource("CircleShape2D_2ixlr")
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource("2_4nuws")

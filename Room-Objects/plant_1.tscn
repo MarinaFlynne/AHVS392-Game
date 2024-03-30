@@ -3,14 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_j8jx2"]
 [ext_resource type="Texture2D" uid="uid://bfd05sgi2lfw6" path="res://Sprites/plant1.png" id="2_djdmh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5swiw"]
-size = Vector2(32, 56)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nth45"]
+radius = 12.0
+height = 46.0
 
 [node name="Plant1" instance=ExtResource("1_j8jx2")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, -2)
-shape = SubResource("RectangleShape2D_5swiw")
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_nth45")
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource("2_djdmh")

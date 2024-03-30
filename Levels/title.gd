@@ -4,4 +4,4 @@ extends Node2D
 
 
 func _on_button_pressed():
-	SceneManager.SwitchScene("bedroom")
+	SceneManager.SwitchScene("bedroom", true)

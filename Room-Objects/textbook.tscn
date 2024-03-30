@@ -1,17 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4k1sfh1nri4p"]
+[gd_scene load_steps=6 format=3 uid="uid://d4k1sfh1nri4p"]
 
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_gsi88"]
 [ext_resource type="Texture2D" uid="uid://o4cmy4x5ldow" path="res://Sprites/howard-antons-elementary-linear-algebra.png" id="2_2wh4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rc51w"]
-size = Vector2(24, 32)
+size = Vector2(12.8891, 22.1317)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nl31d"]
+size = Vector2(9.44454, 12.0659)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05sea"]
+size = Vector2(9.44454, 12.0659)
 
 [node name="Textbook" instance=ExtResource("1_gsi88")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(-4, 8)
+position = Vector2(-3, 5)
 shape = SubResource("RectangleShape2D_rc51w")
 
-[node name="Sprite" parent="." index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(6.27773, 10.0329)
+shape = SubResource("RectangleShape2D_nl31d")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." index="2"]
+position = Vector2(-12, 0)
+shape = SubResource("RectangleShape2D_05sea")
+
+[node name="Sprite" parent="." index="3"]
 scale = Vector2(3, 2.56667)
 texture = ExtResource("2_2wh4n")

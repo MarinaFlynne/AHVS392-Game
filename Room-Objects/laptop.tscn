@@ -1,16 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnivbkasm6g5"]
+[gd_scene load_steps=5 format=3 uid="uid://bnivbkasm6g5"]
 
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_g3ijf"]
 [ext_resource type="Texture2D" uid="uid://dajg6pxsby8x2" path="res://Sprites/laptop.png" id="2_ksolu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_csvgb"]
-size = Vector2(64, 42)
+size = Vector2(46, 42)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fv126"]
+radius = 4.4641
 
 [node name="Laptop" instance=ExtResource("1_g3ijf")]
 
 [node name="CollisionShape2D" parent="." index="0"]
-position = Vector2(0, 5)
+position = Vector2(-9, 5)
 shape = SubResource("RectangleShape2D_csvgb")
 
-[node name="Sprite" parent="." index="1"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(25, 14)
+rotation = -1.0472
+shape = SubResource("CapsuleShape2D_fv126")
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_ksolu")

@@ -1,0 +1,90 @@
+[gd_scene load_steps=9 format=3 uid="uid://gp4y0a80ro8i"]
+
+[ext_resource type="Script" path="res://Levels/ending.gd" id="1_rsy1o"]
+[ext_resource type="Texture2D" uid="uid://cya37g2laov31" path="res://Sprites/ending.png" id="2_o4uhe"]
+[ext_resource type="Texture2D" uid="uid://3fjbmkvyrt4d" path="res://Sprites/ending2.png" id="3_l0wb4"]
+[ext_resource type="AudioStream" uid="uid://cgl6dmukmfw5y" path="res://SFX/437352__giddster__car-starting-recorded-from-garage.wav" id="4_0624r"]
+[ext_resource type="FontFile" uid="uid://c72r586hyy6uw" path="res://Fonts/CelticTime.ttf" id="5_li16a"]
+
+[sub_resource type="Animation" id="Animation_xmned"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1vi4s"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i5syc"]
+_data = {
+"RESET": SubResource("Animation_xmned"),
+"fade_in": SubResource("Animation_1vi4s")
+}
+
+[node name="Ending" type="Node2D"]
+script = ExtResource("1_rsy1o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("2_o4uhe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(576, 324)
+scale = Vector2(3, 3)
+texture = ExtResource("3_l0wb4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_i5syc")
+}
+
+[node name="Car_noise" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_0624r")
+
+[node name="End Label" type="Label" parent="."]
+visible = false
+offset_left = 327.0
+offset_top = 159.0
+offset_right = 1793.0
+offset_bottom = 331.0
+scale = Vector2(0.328231, 0.328231)
+theme_override_colors/font_color = Color(0.121569, 0.176471, 0.533333, 1)
+theme_override_fonts/font = ExtResource("5_li16a")
+theme_override_font_sizes/font_size = 200
+text = "Thank you for playing!"
+
+[node name="End Label2" type="Label" parent="."]
+visible = false
+offset_left = 336.0
+offset_top = 242.0
+offset_right = 1802.0
+offset_bottom = 414.0
+scale = Vector2(0.328231, 0.328231)
+theme_override_colors/font_color = Color(0.121569, 0.176471, 0.533333, 1)
+theme_override_fonts/font = ExtResource("5_li16a")
+theme_override_font_sizes/font_size = 200
+text = "Game created by Marina"

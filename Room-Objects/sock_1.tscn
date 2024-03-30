@@ -1,9 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://oy08gc5cefkq"]
+[gd_scene load_steps=5 format=3 uid="uid://oy08gc5cefkq"]
 
 [ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_qn2a3"]
 [ext_resource type="Texture2D" uid="uid://crlnw0s8q55sh" path="res://Sprites/sock1.png" id="2_onpy2"]
 
-[node name="Sock1" instance=ExtResource("1_qn2a3")]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_07ks5"]
+radius = 11.3137
+height = 62.2254
 
-[node name="Sprite" parent="." index="1"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kxf6r"]
+radius = 11.3137
+height = 57.3013
+
+[node name="Sock1" instance=ExtResource("1_qn2a3")]
+dialogue_name = "sock_1"
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(3, 8)
+rotation = 0.785397
+shape = SubResource("CapsuleShape2D_07ks5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="1"]
+position = Vector2(4, -12)
+rotation = 2.09439
+shape = SubResource("CapsuleShape2D_kxf6r")
+
+[node name="Sprite" parent="." index="2"]
 texture = ExtResource("2_onpy2")

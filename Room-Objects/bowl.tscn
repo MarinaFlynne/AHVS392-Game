@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://djwp16b1best"]
+
+[ext_resource type="PackedScene" uid="uid://bg3a7bimyvpac" path="res://Room-Objects/clickable_object.tscn" id="1_phxuq"]
+[ext_resource type="Texture2D" uid="uid://nvf3s73ngm5m" path="res://Sprites/bowl.png" id="2_1b06w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_djfd4"]
+radius = 14.0
+height = 36.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21keo"]
+size = Vector2(42, 14)
+
+[node name="Bowl" instance=ExtResource("1_phxuq")]
+dialogue_name = "trans_bowl"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="0"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_djfd4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_21keo")
+
+[node name="Sprite" parent="." index="2"]
+texture = ExtResource("2_1b06w")

@@ -47,18 +47,31 @@ scale = Vector2(3, 3)
 texture = ExtResource("1_tfbam")
 
 [node name="TitleText" type="Label" parent="."]
-offset_left = 680.0
-offset_top = 104.0
-offset_right = 1333.0
-offset_bottom = 331.0
+offset_left = 653.0
+offset_top = 105.0
+offset_right = 1306.0
+offset_bottom = 332.0
 theme_override_colors/font_shadow_color = Color(0.211765, 0.211765, 0.211765, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("2_n8mrq")
 theme_override_font_sizes/font_size = 130
-text = "TITLE 
-OF GAME"
+text = "Moving Out
+"
+
+[node name="TitleText2" type="Label" parent="."]
+offset_left = 739.0
+offset_top = 222.0
+offset_right = 1392.0
+offset_bottom = 449.0
+theme_override_colors/font_shadow_color = Color(0.211765, 0.211765, 0.211765, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_n8mrq")
+theme_override_font_sizes/font_size = 80
+text = "By Marina"
 
 [node name="Button" type="Button" parent="."]
 offset_left = 798.0
